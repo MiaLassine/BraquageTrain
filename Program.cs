@@ -28,7 +28,38 @@ class Program
             BONUS 2 : enregistrer l'ensemble du butin trouvé et l'afficher à la fin
          */
 
-        int wagonNumber = 0;
+        Console.WriteLine("Entrez le nombre de wagon :");
+        Console.WriteLine("------------------------------------------------------------------");
+        string? stringWagonNumber = Console.ReadLine();
+        int intWagonNumber = Convert.ToInt32(stringWagonNumber);
+
+
+        int wagonCounter = 0;
+        int chestCounter = 0;
+        int totalChestCounter = 0;
+        int randomChestNumber = 0;
+
+        Random randomNumber = new Random(); //Création d'une variable instanciée pour générer un nombre de coffre aléatoire à chaque boucle
+
+        while (intWagonNumber > 0)
+        {
+            wagonCounter++;
+            intWagonNumber--;
+            randomChestNumber = randomNumber.Next(1, 5);
+            Console.WriteLine("------------------------------------------------------------------");
+            while (randomChestNumber > 0)
+        {
+            chestCounter++;
+            totalChestCounter++;
+            randomChestNumber--;
+            Console.WriteLine("Wagon " + wagonCounter + " - Coffre " + chestCounter + " inspecté." );
+
+        }
+            chestCounter = 0;
+    }
+        Console.WriteLine("------------------------------------------------------------------");
+        Console.WriteLine("Nombre de coffres inspectés : " + totalChestCounter);
+        Console.WriteLine("------------------------------------------------------------------");
 
     }
 }
